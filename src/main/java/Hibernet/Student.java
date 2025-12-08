@@ -1,9 +1,16 @@
 package Hibernet;
 
-import jakarta.persistence.*;
+
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.*;
 
 @Entity(name="Student")
 @Table(name="studetn_table")
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+@Cacheable
 public class Student {
     @Id
     @Column(name="studetn_id")
